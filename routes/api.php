@@ -17,4 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/test', function (Request $request) {
 
+    return '["authorized"]';
+
+})->middleware('auth:api');
