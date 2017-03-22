@@ -21,4 +21,4 @@ Route::post('/test', function (Request $request) {
 
     return '["authorized"]';
 
-})->middleware('auth:api');
+})->middleware('client_credentials');
