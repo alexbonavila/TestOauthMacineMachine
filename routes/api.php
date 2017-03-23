@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/test', function (Request $request) {
-    return array('ok');
-})->middleware('client_credentials');
+Route::group(['middleware' => 'client_credentials'], function (){
+    Route::post('/test', 'TestLog@store');
+});
+
+
